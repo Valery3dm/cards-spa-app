@@ -35,10 +35,12 @@ const CustomFrom = ({
           onChange={(e) => setPrice(e.target.value)}
         />
         <label>Description:</label>
-        <input
+        <textarea
           id="POST-description"
-          type="textarea"
+          type="text"
           name="description"
+          rows={5}
+          cols={32}
           value={card?.description}
           required
           onChange={(e) => setDescription(e.target.value)}
