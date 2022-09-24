@@ -4,22 +4,28 @@
       "id": "bix27468fjc",
       "title": "Audi",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
-      "price": 100,
-      "inCart": false
+      "price": "100000",
+      "inCart": false,
+      "count": 1,
+      "totalItemPrice": "100000"
     },
     {
       "id": "BMW",
       "title": "iphone 5c",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 150,
-      "inCart": false
+      "inCart": true,
+      "count": 1,
+      "totalItemPrice": 150
     },
     {
       "id": "ox98i1f5idg",
       "title": "Citroen",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 200,
-      "inCart": false
+      "inCart": true,
+      "count": 1,
+      "totalItemPrice": 200
     },
     {
       "id": "adv62bxeq9i",
@@ -110,14 +116,27 @@
       "title": "Honda",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 850,
-      "inCart": false
+      "inCart": true,
+      "count": 1,
+      "totalItemPrice": 850
     },
     {
       "id": "ixp8ux8u33h",
       "title": "Hyundai",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 900,
-      "inCart": true
+      "inCart": false,
+      "count": 1,
+      "totalItemPrice": 900
+    },
+    {
+      "id": "0.7612014809763459SUZUKI",
+      "title": "SUZUKI",
+      "description": "Пушка гонка",
+      "price": "1000000",
+      "inCart": false,
+      "count": 1,
+      "totalItemPrice": "1000000"
     }
   ],
   "cart": [

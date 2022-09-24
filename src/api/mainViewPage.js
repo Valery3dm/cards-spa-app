@@ -23,19 +23,65 @@ export const deleteItem = async (id) => {
   }
 }
 
-export const changeItem = async ({id, title, description, price}) => {
+export const changeItem = async (item) => {
   try {
-    await fetch(`${url}/products/${id}`, {
+    await fetch(`${url}/products/${item.id}`, {
       method: 'put',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        "id": id,
-        "title": title,
-        "description": description,
-        "price": price,
-        "inCart": true
+        "id": item.id,
+        "title": item.title,
+        "description": item.description,
+        "price": item.price,
+        "inCart": !item.inCart,
+        "count": 1,
+        "totalItemPrice": item.price
       })
     })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const addItem = async (newView) => {
+  try {
+    await fetch(`${url}/products/`, {
+      method: 'post',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newView)
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getCardViewData = async (activePages, setTotalPages, setData) => {
+  try {
+    const response = await fetch(`${url}/products?_limit=10&_page=${activePages}&inCart=true`);
+    const responseJson = await response.json();
+    const totalItems = parseFloat(response.headers.get('X-Total-Count'));
+
+    setTotalPages(Math.ceil(totalItems / 10));
+    setData(responseJson);
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+export const getCard = async (id, setTitle, setPrice, setInCart, setDescription, setId) => {
+  try {
+    const response = await fetch(`${url}/products/${id}`, {
+      method: 'get'
+    })
+    const responseJson = await response.json()
+
+    setId(responseJson?.id)
+    setTitle(responseJson?.title)
+    setPrice(responseJson?.price)
+    setInCart(responseJson?.inCart)
+    setDescription(responseJson?.description)
   } catch (error) {
     console.log(error)
   }
